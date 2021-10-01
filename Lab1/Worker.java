@@ -2,7 +2,6 @@ package Lab1;
 
 public class Worker implements Runnable {
 
-	// TODO make all workers wait-notify and pass orange
 	private final Thread thread;
 	private boolean running;
 	private final Lab1.Orange.State[] STATES = new Lab1.Orange.State[] { Lab1.Orange.State.Fetched,
@@ -24,7 +23,7 @@ public class Worker implements Runnable {
 		running = false;
 	}
 
-	public synchronized void doJob(Orange o) {
+	public void doJob(Orange o) {
 		o.runProcess();
 	}
 
